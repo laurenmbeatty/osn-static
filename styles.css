@@ -1,19 +1,22 @@
 body {
   margin: 50px;
   color: #323031;
-  background-color: #A3A866;
+  background-color: #a3a866;
   background-color: #2a9ec1;
-  font-family: 'Lato', sans-serif;
+  font-family: "Lato", sans-serif;
 }
 
-h2, h3 {
-  font-family: 'Montserrat', sans-serif;
+h2,
+h3 {
+  font-family: "Montserrat", sans-serif;
 }
 
 h2 {
   font-size: 1.6em;
   margin: 0 30px 5px 30px;
   text-transform: uppercase;
+  word-wrap: break-word;
+  max-width: 200px;
 }
 
 h3 {
@@ -24,6 +27,30 @@ h3 {
 
 p {
   margin: 0 30px 0 30px;
+}
+
+.search-container {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 50px;
+}
+
+.search-input {
+  padding: 8px;
+  font-size: 24px;
+}
+
+.search-button {
+  padding: 8px 16px;
+  font-size: 24px;
+  color: white;
+  border: none;
+  background-color: #2a9ec1;
+}
+
+.search-button:hover {
+  color: #2a9ec1;
+  background-color: white;
 }
 
 .image-container {
@@ -45,7 +72,7 @@ p {
   transform: translateY(-50%);
 }
 
-.odd>.description {
+.odd > .description {
   background-color: #db3a34;
   z-index: 4;
   width: 112%;
@@ -56,11 +83,11 @@ p {
   text-align: right;
 }
 
-.odd>.description>.text-holder {
+.odd > .description > .text-holder {
   right: 0;
 }
 
-.even>.description {
+.even > .description {
   z-index: 2;
   background-color: #5bba6f;
   width: 112%;
@@ -69,7 +96,7 @@ p {
   grid-row: 1 / 2;
 }
 
-.even>.photo {
+.even > .photo {
   z-index: 3;
   width: 150%;
   margin-left: -23%;
@@ -78,7 +105,7 @@ p {
   grid-row: 1 / 2;
 }
 
-.odd>.photo {
+.odd > .photo {
   z-index: 5;
   width: 150%;
   margin-left: -25%;

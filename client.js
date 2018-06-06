@@ -1,22 +1,23 @@
 var vm = new Vue({
-  el: '#app',
+  el: "#app",
   data() {
-    return {images: []}
+    return { images: [], clientID: "d1e55bf6704f4b99e93ae57786f434b354a42e5394d5aa34705720922c6cd652", query: "Dogs" };
   },
-  watch: {
-
-  },
-  created() {
-  },
+  watch: {},
+  created() {},
   methods: {
     getImages() {
-      axios.get('https://api.unsplash.com/photos/?page=2&per_page=24&client_id=TODOputclientidhere').then(response => {
-        if(response.data.length){
-          this.images = response.data;
-        } else {
-          console.log("Error in retrieving images.");
-        }
-      })
+      axios
+        .get(`https://api.unsplash.com/search/photos?page=2&per_page=24&query=${this.query}&client_id=${this.clientID}`)
+        .then((response) => {
+          if (response.data.results.length) {
+            console.log(response);
+            this.images = response.data.results;
+            console.log(this.images);
+          } else {
+            console.log(response);
+          }
+        });
     }
   }
 });
